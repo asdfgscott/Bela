@@ -15,13 +15,13 @@ namespace Bela
 
             int points = 0;
 
-            for(int i = 0; i < (n*4); i++);{
+            for(int i = 0; i < (n*4); i++){
                 // Individial cards 
                 char[] card = Console.ReadLine().ToUpper().ToCharArray();
                 char value = card[0];
                 char suit = card[1];
 
-                switch(card[0]){
+                switch(value){
                     case 'A':
                         points += 11;
                         break;
@@ -32,7 +32,7 @@ namespace Bela
                         points += 3;
                         break;
                     case 'J':
-                        if (card[1] == input[1]){
+                        if (suit == b){
                             points += 20;
                         }
                         else {
@@ -43,9 +43,11 @@ namespace Bela
                         points += 10;
                         break;
                     case '9':
-                        if(card[1] == input[1]){
+                        if(suit == b){
                             points += 14;
                         }
+                        break;
+                    default:
                         break;
                 }
             }
