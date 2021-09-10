@@ -9,10 +9,10 @@ namespace Bela
             // Splits on space
             // Stores input as string in an array
             string[] input = Console.ReadLine().ToUpper().Split(" ");
-            long n = Int64.Parse(input[0]);
-            char b = input[1][0];
+            long hands = Int64.Parse(input[0]);
+            char dom = input[1][0];
             int points = 0;
-            for(int i = 0; i < (n*4); i++){
+            for(int i = 0; i < (hands*4); i++){
                 // Individial cards 
                 char[] card = Console.ReadLine().ToUpper().ToCharArray();
                 //Setting the first character as the value 
@@ -33,7 +33,7 @@ namespace Bela
                         break;
                     // This is where it differentiates 
                     case 'J':
-                        if (suit == b){
+                        if (suit == dom){
                             points += 20;
                         }
                         else {
@@ -44,7 +44,7 @@ namespace Bela
                         points += 10;
                         break;
                     case '9':
-                        if(suit == b){
+                        if(suit == dom){
                             points += 14;
                         }
                         break;
